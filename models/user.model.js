@@ -1,6 +1,6 @@
 const mongoose = require('mongoose'); // faire appel à mongoose
 const { isEmail } = require('validator'); // validator c'est une bibliothèque 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt'); // bcrypt permet de crypté des données ou mots de passe 
 
 const userSchema = new mongoose.Schema(
   {
@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
     email: {                  
       type: String,
       required: true,
-      validate: [isEmail],
+      validate: [isEmail],   // Permet de faire des validations très précise avec validator 
       lowercase: true,
       unique: true,
       trim: true,
@@ -45,12 +45,13 @@ const userSchema = new mongoose.Schema(
     }
   },
   {
-    timestamps: true, 
+    timestamps: true,   // On sait quand l'utilisateur s'enregistre à chaque fois qu'il le fait au millième de seconde près
   }
 );
 
-// play function before save into display: 'block', // // jouer la fonction avant de sauvegarder dans l'affichage: 'block',
-userSchema.pre("save", async function(next) {
+// play function before save into display: 'block', // 
+// jouer la fonction avant de sauvegarder dans l'affichage: 'block' et permet de crypté le mot de passe, 
+userSchema.pre("save", async function(next) {             
   const salt = await bcrypt.genSalt();
   this.password = await bcrypt.hash(this.password, salt);
   next();
@@ -68,6 +69,6 @@ userSchema.statics.login = async function(email, password) {
   throw Error('incorrect email')
 };
 
-const UserModel = mongoose.model("user", userSchema);
+const UserModel = mongoose.model("user", userSchema); 
 
 module.exports = UserModel;
