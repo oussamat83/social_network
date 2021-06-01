@@ -1,4 +1,4 @@
-const mongoose = require("mongoose"); // Mongoose pour se connecter à base de données 
+const mongoose = require("mongoose"); // Mongoose pour se connecter à la base de données 
 
 mongoose
     .connect("mongodb+srv://" + process.env.DB_USER_PASS + "@cluster0.034f1.mongodb.net/social_network", //  + process.env.DB_USER_PASS + protection des données 
