@@ -4,7 +4,7 @@ mongoose
     .connect("mongodb+srv://" + process.env.DB_USER_PASS + "@cluster0.034f1.mongodb.net/social_network", //  + process.env.DB_USER_PASS + protection des données 
         {
             useNewUrlParser: true,
-            useUnifieldTopology: false,
+            useUnifieldTopology: true,
             useCreateIndex: true,
             useFindAndModify: false
         }
