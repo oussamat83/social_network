@@ -49,13 +49,15 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// play function before save into display: 'block', // 
+
 // jouer la fonction avant de sauvegarder dans l'affichage: 'block' et permet de crypté le mot de passe, 
 userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt();
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
+
+// Permet de décrypté le mot de passe
 
 userSchema.statics.login = async function (email, password) {
   const user = await this.findOne({ email });
