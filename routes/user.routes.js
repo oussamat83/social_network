@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const authController = require('../controllers/auth.controller');
 const userController = require('../controllers/user.controller');
+const uploadController = require('../controllers/upload.controller');
+const multer = require('multer');
+const upload = multer();
 
 // auth ( Authentification )
 router.post("/register", authController.signUp);        // Ajouter un utilisateur / s'inscrire
@@ -16,5 +19,6 @@ router.patch("/follow/:id", userController.follow);     // S'abonner à un utili
 router.patch("/unfollow/:id", userController.unfollow); // Se désabonner d'un utilisateur
 
 // upload ( téléchargement )
+router.post("/upload", upload.single("file"), uploadController.uploadProfil);
 
 module.exports = router;
