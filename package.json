@@ -9,6 +9,7 @@
     "eslint": "^7.27.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
+    "fs": "^0.0.1-security",
     "fs-temp": "^1.2.1",
     "g": "^2.0.1",
     "jose": "^3.12.2",
