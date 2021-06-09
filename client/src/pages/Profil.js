@@ -1,13 +1,13 @@
 import React from 'react';
 import Log from '../components/Log';
-
+                                                  // changer le logo ligne 10 
 const Profil = () => {
   return (
     <div className="profil-page">
       <div className="log-container">
-        <Log />
+        <Log  signin={false} signup={true} />
         <div className="img-container">
-          <img src="./img/petit-chef.svg" alt="img-log" />
+          <img src="./img/logof5.svg" alt="img-log" />   
         </div>
       </div>
     </div>
