@@ -12,7 +12,7 @@ const SignInForm = () => {
 
     axios({
       method: "post",
-      url: `${process.env.REACT_APP_APP_URL}api/user/login`,
+      url: `${process.env.REACT_APP_API_URL}api/user/login`,
       withCredentials: true,
       data: {
         email,
@@ -20,6 +20,7 @@ const SignInForm = () => {
       },
     })
       .then((res) => {
+        console.log(res);
         if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;

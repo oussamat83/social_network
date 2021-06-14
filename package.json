@@ -14,6 +14,7 @@
     "fs-temp": "^1.2.1",
     "g": "^2.0.1",
     "jose": "^3.12.2",
+    "js-cookie": "^2.2.1",
     "json": "^11.0.0",
     "jsonwebtoken": "^8.5.1",
     "mjs": "^1.0.0",
@@ -21,6 +22,7 @@
     "multer": "^2.0.0-rc.1",
     "node": "^14.16.1",
     "nodemon": "^2.0.7",
+    "react-datepicker": "^4.1.1",
     "temp-fs": "^0.9.9",
     "validator": "^13.6.0"
   },
