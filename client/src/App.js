@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Routes from "./components/Routes";
-import { UidContext } from './components/AppContext';
+import { UidContext } from "./components/AppContext";
 import axios from "axios";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { getUser } from "./actions/user.actions";
 
 const App = () => {
@@ -17,14 +17,13 @@ const App = () => {
         withCredentials: true,
       })
         .then((res) => {
-          // console.log(res);
           setUid(res.data);
         })
         .catch((err) => console.log("No token"));
-    }
+    };
     fetchToken();
 
-    if (uid) dispatch(getUser(uid))
+    if (uid) dispatch(getUser(uid));
   }, [uid, dispatch]);
 
   return (
