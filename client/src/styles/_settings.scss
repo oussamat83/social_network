@@ -17,7 +17,7 @@ $font-3: "font-3", serif;
 
 $color-1: #FFFF;
 $color-2: #F2994A;
-$color-3: #F2994A;
+$color-3: #030303;
 $color-4: #ffa50057;
 $black: rgb(40, 40, 40);
 $white: rgb(253, 253, 253);
@@ -56,8 +56,8 @@ textarea {
 }
 button,
 input[type="submit"] {
-  background: $color-2;
-  color: $color-1;
+  background: #f2994aa6;
+  color: #fff;
   font-family: $font-3;
   cursor: pointer;
   transition: 0.2s;
@@ -69,7 +69,7 @@ input[type="submit"] {
 
   &:hover {
     background: $color-1;
-    color: $color-2;
+    color: #000;
   }
 }
 input[type="checkbox"] {

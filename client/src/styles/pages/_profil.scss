@@ -162,8 +162,8 @@
           position: absolute;
           transform: translate(-50%, -50%);
           width: 270px;
-          background: $color-3;
-          color: #ffe2a4;
+          background: #20385d;
+          color:#ffff;
           border-radius: 20px;
           display: inline-block;
           padding: 9px 0;
@@ -224,8 +224,8 @@
         margin: 60px 0 10px;
       }
       h5 {
-        background: $color-1;
-        color: $color-4;
+        background: #f2994a;
+        color: #ffff;
         font-family: $font-1;
         margin: 20px 0;
         padding: 12px;
@@ -261,7 +261,7 @@
       top: 10%;
       left: 50%;
       transform: translate(-100%);
-      background: $color-2;
+      background: #f7b26a;
       padding: 25px;
       border-radius: 20px;
       box-shadow: 0 0 2px rgba(131, 130, 130, 0.356);
@@ -302,7 +302,7 @@
           width: 2px;
         }
         &::-webkit-scrollbar-track {
-          background: $color-4;
+          background: #ffff;
         }
         &::-webkit-scrollbar-thumb {
           background: $color-1;
@@ -332,12 +332,12 @@
             text-align: left;
 
             button {
-              background: $color-4;
+              background: #20385d;
               border-radius: 20px;
               margin-right: 6px;
 
               &:hover {
-                color: $color-3;
+                color: #f7b26a;
                 transform: translateX(2px);
               }
             }
