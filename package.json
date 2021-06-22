@@ -23,6 +23,7 @@
     "node": "^14.16.1",
     "nodemon": "^2.0.7",
     "react-datepicker": "^4.1.1",
+    "reactjs-popup": "^2.0.4",
     "temp-fs": "^0.9.9",
     "validator": "^13.6.0"
   },

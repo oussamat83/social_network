@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 const SignInForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const emailError = document.querySelector('.email.error');
-    const passwordError = document.querySelector('.password.error');
+    const emailError = document.querySelector(".email.error");
+    const passwordError = document.querySelector(".password.error");
 
     axios({
       method: "post",
@@ -25,7 +25,7 @@ const SignInForm = () => {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
         } else {
-          window.location = '/';
+          window.location = "/";
         }
       })
       .catch((err) => {
@@ -33,10 +33,10 @@ const SignInForm = () => {
       });
   };
 
-
   return (
     <form action="" onSubmit={handleLogin} id="sign-up-form">
-      <label htmlFor="email">Email</label><br />
+      <label htmlFor="email">Email</label>
+      <br />
       <input
         type="text"
         name="email"
@@ -46,8 +46,8 @@ const SignInForm = () => {
       />
       <div className="email error"></div>
       <br />
-
-      <label htmlFor="password">Mot de passe</label><br />
+      <label htmlFor="password">Mot de passe</label>
+      <br />
       <input
         type="password"
         name="password"
@@ -57,7 +57,6 @@ const SignInForm = () => {
       />
       <div className="password error"></div>
       <br />
-
       <input type="submit" value="Se connecter" />
     </form>
   );
