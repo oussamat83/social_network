@@ -11,13 +11,11 @@ const FollowHandler = ({ idToFollow, type }) => {
     const handleFollow = () => {
         dispatch(followUser(userData._id, idToFollow));
         setIsFollowed(true);
-
     };
 
     const handleUnfollow = () => {
         dispatch(unfollowUser(userData._id, idToFollow));
         setIsFollowed(false);
-
     };
 
     useEffect(() => {
@@ -27,7 +25,6 @@ const FollowHandler = ({ idToFollow, type }) => {
             } else setIsFollowed(false);
         }
     }, [userData, idToFollow]);
-
 
     return (
         <>
@@ -39,8 +36,8 @@ const FollowHandler = ({ idToFollow, type }) => {
             )}
             {isFollowed === false && !isEmpty(userData) && (
                 <span onClick={handleFollow}>
-                {type === "suggestion" && <button className="follow-btn">Suivre</button>}
-                {type === "card" && <img src="./img/icons/check.svg" alt="check" />}
+                    {type === "suggestion" && <button className="follow-btn">Suivre</button>}
+                    {type === "card" && <img src="./img/icons/check.svg" alt="check" />}
                 </span>
             )}
         </>

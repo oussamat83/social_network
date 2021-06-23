@@ -23,7 +23,7 @@ const UpdateProfil = () => {
     return (
         <div className="profil-container">
             <LeftNav />
-            <h1> Profil de {userData.pseudo} </h1>
+            <h1> Profil de {userData.pseudo}</h1>
             <div className="update-container">
                 <div className="left-part">
                     <h3>Photo de profil</h3>
@@ -73,12 +73,13 @@ const UpdateProfil = () => {
                                                 <img src={user.picture} alt="user-pic" />
                                                 <h4>{user.pseudo}</h4>
                                                 <div className="follow-handler">
-                                                <FollowHandler idToFollow={user._id} type={'suggestion'} />
+                                                    <FollowHandler idToFollow={user._id} type={'suggestion'} />
                                                 </div>
                                             </li>
                                         );
                                     }
                                 }
+                                return null;
                             })}
                         </ul>
                     </div>
@@ -99,12 +100,13 @@ const UpdateProfil = () => {
                                                 <img src={user.picture} alt="user-pic" />
                                                 <h4>{user.pseudo}</h4>
                                                 <div className="follow-handler">
-                                                <FollowHandler idToFollow={user._id} type={'suggestion'} />
+                                                    <FollowHandler idToFollow={user._id} type={'suggestion'} />
                                                 </div>
                                             </li>
                                         );
                                     }
                                 }
+                                return null;
                             })}
                         </ul>
                     </div>
