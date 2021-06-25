@@ -136,6 +136,7 @@
           padding: 10px 20px;
           background: $white;
           transition: 0.2s;
+          color: #f7b26a;
 
           &:hover {
             background: $color-3;
@@ -165,10 +166,11 @@
           border-radius: 20px;
           margin-right: 8px;
           background: $white;
+          color: #f7b26a;
 
           &:hover {
-            color: $color-4;
-            background: $color-3;
+            color: #fedfa7;
+            background: #030303;
           }
         }
         .send {

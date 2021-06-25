@@ -4,13 +4,12 @@ const PostSchema = new mongoose.Schema(
     {
         posterId: {
             type: String,
-            trim: true,
-            maxlenght: 500,
+            required: true
         },
         message: {
             type: String,
             trim: true,
-            maxlenght: 500,
+            maxlength: 500,
         },
         picture: {
             type: String,
@@ -25,7 +24,7 @@ const PostSchema = new mongoose.Schema(
         comments: {
             type: [
                 {
-                    commenterID: String,
+                    commenterId: String,
                     commenterPseudo: String,
                     text: String,
                     timestamp: Number,
