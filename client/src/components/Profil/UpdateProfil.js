@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import LeftNav from '../LeftNav';
+import React, { useState } from "react";
+import LeftNav from "../LeftNav";
 import { useDispatch, useSelector } from "react-redux";
-import UploadImg from './UploadImg';
-import { updateBio } from '../../actions/user.actions';
+import UploadImg from "./UploadImg";
+import { updateBio } from "../../actions/user.actions";
 import { dateParser } from "../Utils";
-import FollowHandler from './FollowHandler';
+import FollowHandler from "./FollowHandler";
 
 const UpdateProfil = () => {
     const [bio, setBio] = useState("");
     const [updateForm, setUpdateForm] = useState(false);
     const userData = useSelector((state) => state.userReducer);
     const usersData = useSelector((state) => state.usersReducer);
+    const error = useSelector((state) => state.errorReducer.userError);
     const dispatch = useDispatch();
     const [followingPopup, setFollowingPopup] = useState(false);
     const [followersPopup, setFollowersPopup] = useState(false);
@@ -29,6 +30,8 @@ const UpdateProfil = () => {
                     <h3>Photo de profil</h3>
                     <img src={userData.picture} alt="user-pic" />
                     <UploadImg />
+                    <p>{error.maxSize}</p>
+                    <p>{error.format}</p>
                 </div>
                 <div className="right-part">
                     <div className="bio-update">
@@ -53,8 +56,12 @@ const UpdateProfil = () => {
                         )}
                     </div>
                     <h4>Membre depuis le : {dateParser(userData.createdAt)}</h4>
-                    <h5 onClick={() => setFollowingPopup(true)}>Abonnements : {userData.following ? userData.following.length : ""}</h5>
-                    <h5 onClick={() => setFollowersPopup(true)}>Abonnés : {userData.followers ? userData.following.length : ""} </h5>
+                    <h5 onClick={() => setFollowingPopup(true)}>
+                        Abonnements : {userData.following ? userData.following.length : ""}
+                    </h5>
+                    <h5 onClick={() => setFollowersPopup(true)}>
+                        Abonnés : {userData.followers ? userData.followers.length : ""}
+                    </h5>
                 </div>
             </div>
             {followingPopup && (
@@ -83,8 +90,9 @@ const UpdateProfil = () => {
                             })}
                         </ul>
                     </div>
-                </div>)}
-            {followersPopup &&
+                </div>
+            )}
+            {followersPopup && (
                 <div className="popup-profil-container">
                     <div className="modal">
                         <h3>Abonnés</h3>
@@ -110,7 +118,8 @@ const UpdateProfil = () => {
                             })}
                         </ul>
                     </div>
-                </div>}
+                </div>
+            )}
         </div>
     );
 };
